@@ -1,6 +1,5 @@
 const http = require('http');
 const fs = require('fs');
-const { error } = require('console');
 const userRequestHandler = (req, res) => {
   console.log(req.url, req.method);
   // process.exit();//stop event loop
@@ -25,14 +24,14 @@ const userRequestHandler = (req, res) => {
     res.write('</body>');
     res.write('</html>');
     return res.end();
-  } else if (req.url === '/products') {
-    res.setHeader('Content-Type', 'text/html');
-    res.write('<html>');
-    res.write('<head><title>product</title></head>');
-    res.write('<body><h1>product page</h1>');
-    res.write('</body>');
-    res.write('</html>');
-    return res.end();
+    } else if (req.url === '/products') {
+      res.setHeader('Content-Type', 'text/html');
+      res.write('<html>');
+      res.write('<head><title>product</title></head>');
+      res.write('<body><h1>product page</h1>');
+      res.write('</body>');
+      res.write('</html>');
+      return res.end();
 
   } else if (req.url.toLowerCase() === '/submit-details' && req.method == 'POST') {
     const body = [];
@@ -43,24 +42,18 @@ const userRequestHandler = (req, res) => {
     req.on('end', () => {
       const fullBody = Buffer.concat(body).toString();
       console.log(fullBody);
-      const params = new URLSearchParams(fullBody);
+      const params =new URLSearchParams(fullBody);
       // const bodyobj = {};
       // for (const [key, val] of params.entries()) {
       //   bodyobj[key] = val;
       // }
-      const bodyobj = Object.fromEntries(params);
+      const bodyobj= Object.fromEntries(params);
       console.log(bodyobj);
-      //blocking everything
-      fs.writeFile('user.txt', JSON.stringify(bodyobj), error => {
-        console.log('data written successfully');
-        res.statusCode = 302;
-        res.setHeader('Location', '/');
-        return res.end();
-      });
+      fs.writeFileSync('user.txt', JSON.stringify(bodyobj));
     });
-
-    // res.statusCode = 302;
-    // res.setHeader('Location', '/');
+    
+    res.statusCode = 302;
+    res.setHeader('Location', '/');
 
   }
   //sending response 
