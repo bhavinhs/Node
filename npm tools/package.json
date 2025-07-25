@@ -4,8 +4,13 @@
   "description": "this is being created to learn about",
   "main": " ",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node app.js",
+    "s": "node app.js"
   },
   "author": "bhavin",
-  "license": "ISC"
+  "license": "ISC",
+  "devDependencies": {
+    "nodemon": "^3.1.10"
+  }
 }
