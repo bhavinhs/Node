@@ -52,7 +52,7 @@ const userRequestHandler = (req, res) => {
       console.log(bodyobj);
       //blocking everything
       fs.writeFile('user.txt', JSON.stringify(bodyobj), error => {
-        console.log('data written successfully');
+        console.log('data written successfully'); 
         res.statusCode = 302;
         res.setHeader('Location', '/');
         return res.end();
@@ -63,13 +63,15 @@ const userRequestHandler = (req, res) => {
     // res.setHeader('Location', '/');
 
   }
-  //sending response 
+else{
+    //sending response 
   res.setHeader('Content-Type', 'text/html');
   res.write('<html>');
   res.write('<head><title>server</title></head>');
   res.write('<body><h1>server</h1></body>');
   res.write('</html>');
   return res.end();
+}
 };
 // const PORT = 3000;
 // server.listen(PORT, () => {
