@@ -1,0 +1,30 @@
+   body {
+            font-family: Arial, sans-serif;
+            background: #f7f7f7;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background: #ff5a5f;
+            color: #fff;
+            padding: 2rem 0;
+            text-align: center;
+        }
+        main {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 60vh;
+        }
+        a {
+            background: #007a87;
+            color: #fff;
+            padding: 1rem 2rem;
+            text-decoration: none;
+            border-radius: 5px;
+            font-size: 1.2rem;
+            transition: background 0.2s;
+        }
+        a:hover {
+            background: #005f6b;
+        }
