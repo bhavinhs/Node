@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact-Us</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f6f8fa;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background: #0077cc;
+            color: #fff;
+            padding: 2rem 0;
+            text-align: center;
+        }
+        main {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 60vh;
+        }
+        form {
+            background: #fff;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            min-width: 300px;
+        }
+        input[type="text"],
+        input[type="email"] {
+            padding: 0.75rem;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-size: 1rem;
+        }
+        input[type="text"]:focus,
+        input[type="email"]:focus {
+            border-color: #0077cc;
+            outline: none;
+        }
+        button {
+            padding: 0.75rem;
+            background: #0077cc;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+        button:hover {
+            background: #005fa3;
+        }
+    </style>
+</head>
+<body>
+    <header>
+          <h1>Welcome to Contact Us Page</h1>
+          <h1>Enter your detail here</h1>
+    </header>
+    <main>
+        <form action="/contact-us" method="POST">
+            <input type="text" name="name" placeholder="Enter your name">
+            <input type="email" name="email" placeholder="Enter your email">
+            <button type="submit">Submit</button>
+        </form>
+    </main>
+</body>
+</html>

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>airbnb</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Arial, sans-serif;
+            background: #f7f7f7;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background: #ff5a5f;
+            color: #fff;
+            padding: 2rem 0;
+            text-align: center;
+        }
+        main {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 60vh;
+        }
+        form {
+            background: #fff;
+            padding: 2rem 2.5rem;
+            border-radius: 12px;
+            box-shadow: 0 2px 16px rgba(0,0,0,0.08);
+            display: flex;
+            flex-direction: column;
+            gap: 1.2rem;
+            min-width: 320px;
+        }
+        input[type="text"] {
+            padding: 0.8rem;
+            border: 1px solid #ddd;
+            border-radius: 6px;
+            font-size: 1rem;
+        }
+        button {
+            background: #ff5a5f;
+            color: #fff;
+            border: none;
+            padding: 0.8rem;
+            border-radius: 6px;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+        button:hover {
+            background: #e04850;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>add your home</h1>
+    </header>
+    <main>
+        <form action="/host/add-home" method="POST">
+            <input type="text" name="title" placeholder="Enter your home title">
+            <button type="submit">Submit</button>
+        </form>
+    </main>
+</body>
+</html>
