@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include("partials/head") %>
+
+  <body style="font-family: 'Segoe UI', Arial, sans-serif; background-color: #f0f2f5; margin: 0; padding: 0;">
+    <%- include("partials/header") %>
+      <!-- Main Content -->
+      <main
+        style="display: flex; justify-content: center; align-items: center; padding: 60px 20px; min-height: calc(100vh - 180px);">
+        <form action="/host/add-home" method="POST"
+          style="background: white; padding: 2.5rem 3rem; border-radius: 14px; box-shadow: 0 4px 18px rgba(0,0,0,0.06); display: flex; flex-direction: column; gap: 1.5rem; width: 100%; max-width: 400px;">
+
+          <label style="font-size: 1rem; font-weight: 600; color: #333;">Home Title</label>
+          <input type="text" name="houseName" placeholder="Enter your House Name"
+            style="padding: 0.9rem 1rem; border: 1px solid #ccc; border-radius: 8px; font-size: 1rem; transition: border-color 0.2s; outline: none;"
+            onfocus="this.style.borderColor='#FF385C';" onblur="this.style.borderColor='#ccc';" required>
+          <input type="text" name="price" placeholder="Price per night "
+            style="padding: 0.9rem 1rem; border: 1px solid #ccc; border-radius: 8px; font-size: 1rem; transition: border-color 0.2s; outline: none;"
+            onfocus="this.style.borderColor='#FF385C';" onblur="this.style.borderColor='#ccc';" required>
+          <input type="text" name="Location" placeholder="Location "
+            style="padding: 0.9rem 1rem; border: 1px solid #ccc; border-radius: 8px; font-size: 1rem; transition: border-color 0.2s; outline: none;"
+            onfocus="this.style.borderColor='#FF385C';" onblur="this.style.borderColor='#ccc';" required>
+          <input type="text" name="rating" placeholder="Rating "
+            style="padding: 0.9rem 1rem; border: 1px solid #ccc; border-radius: 8px; font-size: 1rem; transition: border-color 0.2s; outline: none;"
+            onfocus="this.style.borderColor='#FF385C';" onblur="this.style.borderColor='#ccc';" required>
+          <input type="text" name="Photo" placeholder="Enter Photo URL"
+            style="padding: 0.9rem 1rem; border: 1px solid #ccc; border-radius: 8px; font-size: 1rem; transition: border-color 0.2s; outline: none;"
+            onfocus="this.style.borderColor='#FF385C';" onblur="this.style.borderColor='#ccc';" required>
+
+          <button type="submit"
+            style="background-color: #FF385C; color: #fff; font-size: 1rem; padding: 0.9rem 1rem; border: none; border-radius: 8px; font-weight: bold; cursor: pointer; transition: background-color 0.3s;"
+            onmouseover="this.style.backgroundColor='#e03150';" onmouseout="this.style.backgroundColor='#FF385C';">
+            Submit Home
+          </button>
+        </form>
+      </main>
+
+      <!-- Footer (optional) -->
+      <footer style="text-align: center; padding: 1rem; color: #888; font-size: 0.9rem;">
+        &copy; 2025 Airbnb, Inc. All rights reserved.
+      </footer>
+
+  </body>
+
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <%- include("partials/head") %>
+  <body style="font-family: 'Segoe UI', Arial, sans-serif; height: 100vh; position: relative; background: #f7f7f7; margin: 0; padding: 0; color: #333;">
+
+    <%- include("partials/header") %>
+
+    <!-- Main Content -->
+    <main style="max-width: auto; margin: 30px 40px auto; background: #fff; border-radius: 12px; box-shadow: 0 2px 12px rgba(0,0,0,0.07); padding: 30px 40px;">
+      <h1 style="font-size: 1.6rem; margin-bottom: 18px; color: #222; text-align: center;;">Here is Registered Home</h1>
+
+      <!-- Flex container for cards -->
+      <div style="display: flex; flex-wrap: wrap; gap: 20px; justify-content: center;">
+        <% registeredHome.forEach(home => { %>
+          <div style="background: #f9f9f9; color: #222; border-radius: 10px; box-shadow: 0 2px 8px rgba(0,0,0,0.06); padding: 20px; width: 300px; display: flex; flex-direction: column; align-items: center;">
+            <img src="<%= home.Photo %>" alt="House Photo" style="width: 100%; height: 180px; object-fit: cover; border-radius: 8px; margin-bottom: 14px;">
+            <h2 style="font-size: 1.3rem; margin: 0 0 8px 0; text-align: center;"><%= home.houseName %></h2>
+            <p style="margin: 4px 0;"><strong>Price:</strong> ₹<%= home.price %></p>
+            <p style="margin: 4px 0;"><strong>Location:</strong> <%= home.Location %></p>
+            <p style="margin: 4px 0;"><strong>Rating:</strong> <%= home.rating %></p>
+          </div>
+        <% }) %>
+      </div>
+    </main>
+
+    <%- include("partials/footer") %>
+
+  </body>
+</html>
